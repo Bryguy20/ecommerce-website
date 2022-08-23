@@ -1,0 +1,134 @@
+:root {
+    --mainBGColor: #F0EBD8;
+    --navColor: #283845;
+}
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr {
+    width:90%;
+    margin:0 auto;
+}
+body{
+    margin:0px;
+    background-color: var(--mainBGColor)
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.search-bar{
+    border-radius: 5px;
+    width:70%;
+    padding: 12px 20px;
+    border:1px solid white;
+    margin-left:20px
+}
+
+.search-bar:focus,
+.search-bar:hover{
+    box-shadow: 0px 0px 10px #3E5376 ;
+    outline: none;
+}
+
+#search-button{
+    background-color: #FE654F ;
+    border: 1px solid#FE654F;
+    padding: 12px;
+    border-radius: 5px;
+}
+#search-button:hover{
+    cursor: pointer;
+    background-color:#803327; 
+    border: 1px solid#803327
+}
+
+#signin a{
+    margin:6px 6px 6px 50px;
+    text-decoration: none;
+    color:black;
+}
+
+#signin a:hover{
+    color:#FE654F
+}
+
+#Cart a{
+    margin:6px;
+    text-decoration: none;
+    color:black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 35px;
+    width: 100vw;
+}
+
+#logo{
+    color:black;
+    font-size: 40px;
+    font-style: italic;
+    padding: 10px 0px 10px 10px;
+    
+
+}
+#logo >a{
+    text-decoration: none;
+    color:black
+}
+
+#logo a:hover{
+    color: #FE654F;
+}
+
+#logo-image{
+    margin:10px 10px 10px -50px;
+}
+
+.Nav-Link {
+    display: inline;
+    padding:5px;
+    border-radius: 12px;
+}
+
+.Nav-Link> a {
+    text-decoration: none;
+    color:black;
+    margin: 10px;
+}
+
+.Nav-Link :hover{
+    color: #3E5376;
+}
+
+.carousel{
+    background-color: white;
+    width: 100vw;
+    height: 50vh;
+}
+
+.item-cards-container{
+    margin:10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.item-card{
+    width: 200px;
+    height:200px;
+    background-color: white;
+    border-radius: 5px;
+}
