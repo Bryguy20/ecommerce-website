@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+
+{{> cart-details }}
+{{#each cartItems as |cartItem|}}
+{{> cart-details}}
+{{/each}}
+<button minus>
+<span>{{cart.count}} </span>
+<button plus>
+  {{else}}
+  <p>There are no items in your cart.</p>
+  {{/if }}
+   
+  <div class="row">
+    <div class="col-md-12">
+    {{#if cartItems}}
+      <a href="/order" class="btn btn-primary">Checkout</a>
+    {{else}}
+      <a href="/products" class="btn btn-primary">Shop</a>
+    {{/if}}
+    </div>
+  </div>
+</div>
+       {{!-- </div>  
+     </div> --}}
+
+
+    
+</body>
+</html>
