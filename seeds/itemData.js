@@ -1,4 +1,6 @@
-[
+const { Product } = require('../models');
+
+const productdata = [
   {
     "item": "Awesome Generic Coffee Pods",
     "description": "Ten count of medium roast amazing arabica coffee pods.",
@@ -130,3 +132,7 @@
     "price": 10
   }
 ]
+
+const seedProduct = () => Product.bulkCreate(productdata);
+
+module.exports = seedProduct;

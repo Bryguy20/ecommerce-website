@@ -4,23 +4,21 @@ const { Category, Product } = require('../models');
 // GET all galleries for homepage
 router.get('/', async (req, res) => {
   try {
-  //   const dbCategoryData = await Category.findAll({
-  //     include: [
-  //       {
-  //         model: Product,
-  //         attributes: ['filename', 'description'],
-  //       },
-  //     ],
-  //   });
+    const dbCategoryData = await Category.findAll({
+      include: [
+        {
+          model: Product
+        },
+      ],
+    });
 
-  //   const categories = dbCategoryData.map((category) =>
-  //     category.get({ plain: true })
-  //   );
-    res.render('homepage')
-    // res.render('homepage', {
-    //   categories,
-    //   loggedIn: req.session.loggedIn,
-    // });
+    const categories = dbCategoryData.map((category) =>
+      category.get({ plain: true })
+    );
+    res.render('homepage', {
+      categories,
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
