@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nik Nak Ecommerce Store</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/public/css/simple.css">
+    {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="/css/simple.css">
 </head>
 
 <body>
     <header>
 
         <h1 id="logo"><a href="#">Nik Nak</a></h1>
-        <img id="logo-image" src="public/image/NIkNak_Logo.png" alt="Shopping bag logo">
+        <img id="logo-image" src="/images/NIkNak_Logo.png" alt="Shopping bag logo">
 
         <div>
             <input class="search-bar" type="text" placeholder="Search for Anything " size="200" height="50">
             <button id="search-button" type="button">Search</button>
-            <span id="signin"><a href="#">Sign-in </a></span>
+            <span id="signin"><a href="/login">Sign-in </a></span>
             <span id="Cart"><a href="#">Cart </a></span>
         </div>
 
@@ -39,7 +39,7 @@
             </ul>
         </div>
     </nav>
-    {{body}}
+        {{{body}}}
     <footer></footer>
 </body>
 
