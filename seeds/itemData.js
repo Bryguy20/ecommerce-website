@@ -77,7 +77,7 @@ const productdata = [
     "price": 10
   },
   {
-    "item": "smat TV",
+    "item": "smart TV",
     "description": "42 inch 4k TV built in wifi support for all the streaming services",
     "price": 200
   },
