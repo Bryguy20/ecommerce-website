@@ -2,7 +2,8 @@ const { Category } = require('../models');
 
 const categorydata = [
 {
-    "name": "Home & Bath"
+    "name": "Home & Bath",
+    "image": ""
  },
  {
     "name": "Eletronics"
