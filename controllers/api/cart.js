@@ -34,7 +34,6 @@ router.get('/cart', async (req, res) => {
 router.post('/cart/:id', loggedIn, (req, res) => {
     try{
 
-    
      dbCartData.create({
          name: request.name,
          descrption: request.Descrption,
@@ -67,4 +66,5 @@ router.delete('/cart/:id', loggedIn,function(req,res) {
     }
 })
 
-module.exports = router;
+module.exports = router; 
+
