@@ -28,9 +28,9 @@ router.get('/', async (req, res) => {
 // GET one gallery
 router.get('/category/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
+ //if (!req.session.loggedIn) {
+    //res.redirect('/login');
+//} else {
     // If the user is logged in, allow them to view the gallery
     try {
       const dbCategoryData = await Category.findByPk(req.params.id, {
@@ -53,27 +53,27 @@ router.get('/category/:id', async (req, res) => {
       res.status(500).json(err);
     }
   }
-});
+);
 
 
 router.get('/product/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the painting
+  //if (!req.session.loggedIn) {
+  //  res.redirect('/login');
+  //} else {
+   // If the user is logged in, allow them to view the painting
     try {
       const dbProductData = await Product.findByPk(req.params.id);
 
       const product = dbProductData.get({ plain: true });
 
-      res.render('product', { product, loggedIn: req.session.loggedIn });
+      res.render('productView', { product});
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   }
-});
+);
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {

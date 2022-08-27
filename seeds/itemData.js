@@ -50,7 +50,7 @@ const productdata = [
     "category_id": 1
   },
   {
-    "name": "RGB gaming mouse",
+    "item": "RGB gaming mousse",
     "description": "the lights will improve your gameplay",
     "price": 30,
     "category_id": 2
@@ -86,13 +86,12 @@ const productdata = [
     "category_id": 3
   },
   {
-    "name": "Pokemon card set",
-    "description": "These things are still collectables, right? Who knows, you might just get that holographic charizard card",
-    "price": 10,
-    "category_id": 3
+    "item": "Pokemon card set",
+    "description": "These things are still collectables rite? who know you might just get that holographic charizard card",
+    "price": 10
   },
   {
-    "item": "smart TV",
+    "item": "smat TV",
     "description": "42 inch 4k TV built in wifi support for all the streaming services",
     "price": 200,
     "category_id": 2
