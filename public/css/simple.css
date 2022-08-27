@@ -38,13 +38,13 @@ header{
     outline: none;
 }
 
-#search-button{
+.custom-button{
     background-color: #FE654F ;
     border: 1px solid#FE654F;
     padding: 12px;
     border-radius: 5px;
 }
-#search-button:hover{
+.custom-button:hover{
     cursor: pointer;
     background-color:#803327; 
     border: 1px solid#803327
@@ -131,5 +131,18 @@ nav{
     height:200px;
     background-color: white;
     border-radius: 5px;
+}
+.product-img{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-to-cart{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.comment-container{
     text-align: center;
+
 }

@@ -15,7 +15,7 @@ Product.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -29,6 +29,10 @@ Product.init(
             model: 'category',
             key: 'id',
         }
+    },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   },
   {
