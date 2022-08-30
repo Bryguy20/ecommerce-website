@@ -1,143 +1,40 @@
-<<<<<<< HEAD
 const router = require('express').Router();
 const { request, response } = require('express');
-const {Category, Product } = require('../../models');
-const Cart = require('../../models/cart');
+const { Product, CartProduct, Cart, User } = require('../../models');
 
-router.get('/cart', async (req, res) => {
-  try {
-      const dbCartData = await Cart.findAll({
-          include: [
-              {
-                  model: Product,
-                  attributes: [
-                      'id',
-                      'name',
-                      'Description',
-                      'price',
-                      'image'
-                  ]
-              },
-          ],
-      })
+// Create a new cart
 
-      const cart = dbCartData.map((product) => 
-      product.get({ plain: true })
-      );
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
 
-});
 
 // add new item to cart 
-router.post('/cart/:id', loggedIn, (req, res) => {
-    try{
-
-    
-     dbCartData.create({
-         name: request.name,
-         descrption: request.Descrption,
-         image: request.image,
-         price: request.price,
-     }) .then (function(addedItem) {
-
-        response.redirect('/product');
-     }) 
-    }catch(err) {
-         console.log(err);
-         res.status(500).json(err);
-     } 
+router.post('/addCart', async (req, res) => {
+    try {
+        const cartData = await CartProduct.create(req.body);
+        res.status(200).json(cartData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 
 // delete from cart
-router.delete('/cart/:id', loggedIn,function(req,res) {
-   try{ 
-    dbCartData.destroy({
-    where: {
-        loggedIn: request.login.id,
-    }
-    }) .then(function() {
-        response.redirect('/cart');
-    }) 
-} catch(err) {
+router.delete('/cart/:part_id', async (req, res) => {
+    try {
+        var dbCartData = await CartProduct.findOne({
+            where: {
+                cart_id: req.session.cartID, 
+                product_id: req.params.part_id }});
+        dbCartData = await CartProduct.destroy({
+            where: {
+                id: dbCartData.id
+            }
+        });
+        return res.json(dbCartData);
+    } catch (err) {
         console.log(err);
         res.status(500).json(err)
     }
-})
+});
 
 module.exports = router;
-=======
-// const router = require('express').Router();
-// const { request, response } = require('express');
-// const {Category, Product } = require('../../models');
-// const Cart = require('../../models/Cart');
 
-// router.get('/cart', async (req, res) => {
-//   try {
-//       const dbCartData = await Cart.findAll({
-//           include: [
-//               {
-//                   model: Product,
-//                   attributes: [
-//                       'id',
-//                       'name',
-//                       'Description',
-//                       'price',
-//                       'image'
-//                   ]
-//               },
-//           ],
-//       })
-
-//       const cart = dbCartData.map((product) => 
-//       product.get({ plain: true })
-//       );
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-
-// });
-
-// // add new item to cart 
-// router.post('/cart/:id', loggedIn, (req, res) => {
-//     try{
-
-//      dbCartData.create({
-//          name: request.name,
-//          descrption: request.Descrption,
-//          image: request.image,
-//          price: request.price,
-//      }) .then (function(addedItem) {
-
-//         response.redirect('/product');
-//      }) 
-//     }catch(err) {
-//          console.log(err);
-//          res.status(500).json(err);
-//      } 
-// });
-
-
-// // delete from cart
-// router.delete('/cart/:id', loggedIn,function(req,res) {
-//    try{ 
-//     dbCartData.destroy({
-//     where: {
-//         loggedIn: request.login.id,
-//     }
-//     }) .then(function() {
-//         response.redirect('/cart');
-//     }) 
-// } catch(err) {
-//         console.log(err);
-//         res.status(500).json(err)
-//     }
-// })
-
-// module.exports = router; 
-
->>>>>>> e121fb576cd91c2aa8718fef33b7cb2dcf8f7911
