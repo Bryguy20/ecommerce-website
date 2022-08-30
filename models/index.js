@@ -35,4 +35,4 @@ Product.belongsToMany(Cart, {
 })
 
 
-module.exports = { User, Category, Product };
+module.exports = { User, Category, Product, Cart, CartProduct };

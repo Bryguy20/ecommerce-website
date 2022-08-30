@@ -47,6 +47,7 @@ router.get('/category/:id', async (req, res) => {
         ],
       });
       const category = dbCategoryData.get({ plain: true });
+      
       res.render('productList', { category, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
@@ -100,7 +101,6 @@ router.get('/signup', (req, res) => {
 router.get('/cart', async (req, res) => {
   try {
     const dbCartData = await Cart.findOne({
-      order: ['user_id'],
       where: { user_id: req.session.userID },
       include: [
         {
@@ -119,7 +119,10 @@ router.get('/cart', async (req, res) => {
 
     const cart = dbCartData.map((product) =>
       product.get({ plain: true }));
-    res.render('productList', { cart, loggedIn: req.session.loggedIn });
+
+    var cartTotal = cart.reduce((product,acc) => acc + (product.qty * product.price),0)
+
+    res.render('cart', { cart,cartTotal: cartTotal, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

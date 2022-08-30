@@ -27,6 +27,10 @@ CartProduct.init(
             model: 'product',
             key: 'id',
         }
+    },
+    qty: {
+      type: DataTypes.INTEGER,
+      allowNUll: false
     }
   },
   {
