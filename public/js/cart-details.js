@@ -1,21 +1,14 @@
 const cartInfo = document.getElementById("cartDetail");
-
-  
-    const addMore = document.getElementById.addEventListener("plus-button"); 
-    const subtract = document.getElementById.addEventListener("minus-button");
-
-
-
 const cartView = async () => {
 
 
-const checkout = document.querySelector('#btn btn-primary').value.trim();
-const shop = document.querySelector('#btn btn-primary').value.trim();
+const  subtract = document.querySelector('#minus-button').value.trim();
+const add = document.querySelector('#plus-button').value.trim();
 
-if(checkout && shop){
-    const response = await fetch('/api/user/login', {
+if(add){
+    const response = await fetch('/api/cart/addCart', {
         method: 'POST',
-        body: JSON.stringify({checkout, shop}),
+        body: JSON.stringify({add}),
         headers: { 'Content-type': 'application/json' },
     });
 
@@ -23,7 +16,15 @@ if(checkout && shop){
         document.location.replace('/');
     }   else {
         alert('cannot checkout Please login!');
-    }
+    } 
+}else {
+    const remove = await fetch('/api/cart/:part_id', {
+    method: 'DELETE',
+    body: JSON.stringify({ subtract}), 
+    header: { 'Content-type': 'application/json' },
+   
+    })  
+    
 }
 };
 

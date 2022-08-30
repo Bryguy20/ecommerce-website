@@ -1,6 +1,5 @@
 <script src="../public/js/cart-details.js"></script>
-<script id="cartDetail" type="text/x-handlebars-template">
-{{> cart-details }}
+{{#if cartItems}}
 {{#each cartItems as |cartItem|}}
 {{> cart-details}}
 {{/each}}
