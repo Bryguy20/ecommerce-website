@@ -13,17 +13,11 @@ Cart.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    quantity:  {
-        type: DataTypes.FLOAT,
-        allowNUll:false,
-    },
-    total: {
-        type : DataTypes.INTEGER
-    },
-    product_id: {
-        type: DataTypes.INTEGER,
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNUll:false,
         references: {
-            model: 'product',
+            model: 'user',
             key: 'id',
         }
     }

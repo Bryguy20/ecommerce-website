@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Category, Product } = require('../models');
+const { Category, Product, Cart, CartProduct } = require('../models');
 
-// GET all galleries for homepage
+// GET all categories for homepage
 router.get('/', async (req, res) => {
   try {
     const dbCategoryData = await Category.findAll({
@@ -25,12 +25,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET one gallery
+// GET one category
 router.get('/category/:id', async (req, res) => {
-   //If the user is not logged in, redirect the user to the login page
- if (!req.session.loggedIn) {
+  // If the user is not logged in, redirect the user to the login page
+  if (!req.session.loggedIn) {
     res.redirect('/login');
-} else {
+  } else {
     // If the user is logged in, allow them to view the gallery
     try {
       const dbCategoryData = await Category.findByPk(req.params.id, {
@@ -49,36 +49,33 @@ router.get('/category/:id', async (req, res) => {
         ],
       });
       const category = dbCategoryData.get({ plain: true });
-      console.log(category);
       res.render('productList', { category, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   }
-}
-);
+});
 
 
 router.get('/product/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
-   res.redirect('/login');
+    res.redirect('/login');
   } else {
-  // If the user is logged in, allow them to view the painting
+    // If the user is logged in, allow them to view the painting
     try {
       const dbProductData = await Product.findByPk(req.params.id);
 
       const product = dbProductData.get({ plain: true });
 
-      res.render('productView', { product});
+      res.render('productView', { product });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
   }
-}
-);
+});
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
@@ -93,12 +90,44 @@ module.exports = router;
 
 
 router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('signup');
-  });
-  
-  module.exports = router;
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
+});
+
+
+router.get('/cart', async (req, res) => {
+  try {
+    const dbCartData = await Cart.findOne({
+      where: { user_id: req.session.userID },
+      include: [
+        {
+          model: Product, through: CartProduct,
+          attributes: [
+            'id',
+            'name',
+            'Description',
+            'price',
+            'image'
+          ],
+          group: 'id'
+        },
+      ],
+    })
+
+    const cart = dbCartData.map((product) =>
+      product.get({ plain: true }));
+
+    var cartTotal = cart.reduce((product,acc) => acc + (product.qty * product.price),0)
+
+    res.render('cart', { cart,cartTotal: cartTotal, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+});
+module.exports = router;

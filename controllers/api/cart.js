@@ -1,71 +1,74 @@
 /*const router = require('express').Router();
 const { request, response } = require('express');
-const {Category, Product } = require('../../models');
-const Cart = require('../../models/cart');
+const { Product, CartProduct, Cart, User } = require('../../models');
 
-router.get('/cart', async (req, res) => {
-  try {
-      const dbCartData = await Cart.findAll({
-          include: [
-              {
-                  model: Product,
-                  attributes: [
-                      'id',
-                      'name',
-                      'Description',
-                      'price',
-                      'image'
-                  ]
-              },
-          ],
-      })
 
-      const cart = dbCartData.map((product) => 
-      product.get({ plain: true })
-      );
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
 
-});
 
 // add new item to cart 
-router.post('/cart/:id', loggedIn: req.session.loggedIn, (req, res) => {
-    try{
+router.post('/:part_id', async (req, res) => {
+    try {
+        let dbCartData = await CartProduct.create({ cart_id: req.session.userCart, product_id: req.params.part_id });
+        dbCartData = dbCartData.get({ plain: true });
 
-     dbCartData.create({
-         name: request.name,
-         descrption: request.Descrption,
-         image: request.image,
-         price: request.price,
-     }) .then (function(addedItem) {
+        if (!dbCartData) {
+            dbCartData = await CartProduct.create({ cart_id: req.session.userCart, product_id: req.params.part_id });
+        } else {
+            dbCartData = await CartProduct.update(
+                { qty: dbCartData.qty++ },
+                {
+                    where: {
+                        cart_id: req,
+                        product_id: req.params.part_id
+                    }
+                })
+        }
 
-        response.redirect('/product');
-     }) 
-    }catch(err) {
-         console.log(err);
-         res.status(500).json(err);
-     } 
+        res.status(200).json(dbCartData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
-
 // delete from cart
-router.delete('/cart/:id', loggedIn,function(req,res) {
-   try{ 
-    dbCartData.destroy({
-    where: {
-        loggedIn: request.login.id,
-    }
-    }) .then(function() {
-        response.redirect('/cart');
-    }) 
-} catch(err) {
+router.delete('/:part_id', async (req, res) => {
+    try {
+        var dbCartData = await CartProduct.findOne({
+            where: {
+                cart_id: req.session.userCart,
+                product_id: req.params.part_id
+            }
+        });
+
+        dbCartData = dbCartData.get({ plain: true });
+
+
+        if (dbCartData.qty > 1) {
+            dbCartData = await CartProduct.update(
+                { qty: cartData.qty-- },
+                {
+                    where: {
+                        cart_id: req,
+                        product_id: req.params.part_id
+                    }
+                })
+            cartData = await CartProduct.create({ cart_id: req.session.userCart, product_id: req.params.part_id });
+        } else if (dbCartData == 1){
+            dbCartData = await CartProduct.destroy({
+                where: {
+                    cart_id: req,
+                    product_id: req.params.part_id
+                }
+            });
+        }
+
+        return res.json(dbCartData);
+    } catch (err) {
         console.log(err);
         res.status(500).json(err)
     }
-})
+});
 
-module.exports = router; 
+module.exports = router;
 
 */
