@@ -1,6 +1,6 @@
-<script src="../public/js/cart-details.js"></script>
-{{#if cartItems}}
-{{#each cartItems as |cartItem|}}
+<script src="/js/cart-details.js"></script>
+{{#if cart}}
+{{#each cart.products as |product|}}
 {{> cart-details}}
 {{/each}}
   {{else}}

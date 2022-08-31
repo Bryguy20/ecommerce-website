@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Cart} = require('../../models');
 
 
 // CREATE new user
@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    let userCart = await CartProduct.create({user_id: dbUserData.id});
+    let userCart = await Cart.create({user_id: dbUserData.id});
     userCart = userCart.get({ plain: true })
     req.session.save(() => {
       req.session.loggedIn = true;
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    let dbUserData = await User.findOne({
       where: {
         email: req.body.email,
       },
@@ -56,12 +56,14 @@ router.post('/login', async (req, res) => {
         user_id: dbUserData.id,
       },
     })
+    console.log(dbUserData.id);
 
-    if(!userCart) {
-      userCart = await CartProduct.create({user_id: dbUserData.id});
+    if(userCart === null) {
+      userCart = await Cart.create({user_id: dbUserData.id});
     } 
 
     userCart = userCart.get({ plain: true })
+    console.log(userCart.id);
 
     req.session.save(() => {
       req.session.loggedIn = true;
@@ -70,6 +72,7 @@ router.post('/login', async (req, res) => {
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
     });
+    console.log(req.session.userCart);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
