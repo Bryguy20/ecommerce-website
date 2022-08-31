@@ -3,9 +3,6 @@
 {{#each cartItems as |cartItem|}}
 {{> cart-details}}
 {{/each}}
-<button id="minus-button">-</button>
-<span>{{cart.count}} </span>
-<button id="plus-button">+</button>
   {{else}}
   <p>There are no items in your cart.</p>
   {{/if }}
@@ -20,4 +17,3 @@
     </div>
   </div>
 </div>
-</script>
