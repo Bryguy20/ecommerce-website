@@ -1,4 +1,4 @@
-const router = require('express').Router();
+/*const router = require('express').Router();
 const { request, response } = require('express');
 const { Product, CartProduct, Cart, User } = require('../../models');
 
@@ -71,3 +71,4 @@ router.delete('/:part_id', async (req, res) => {
 
 module.exports = router;
 
+*/

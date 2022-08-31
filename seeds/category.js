@@ -3,22 +3,27 @@ const { Category } = require('../models');
 const categorydata = [
 {
     "name": "Home & Bath",
-    "image": ""
+    "filename": "home-bath.png",
  },
  {
-    "name": "Eletronics"
+    "name": "Electronics",
+    "filename": "Electronic-Devices.png",
  },
  {
-    "name": "Art & Collectibles"
+    "name": "Art & Collectibles",
+    "filename": "collectibles.png",
  },
  {
-    "name": "Toys & Entertainment"
+    "name": "Toys & Entertainment",
+    "filename": "Toys.png",
  },
  {
-   "name":" Clothing & Accessories"
+   "name":" Clothing & Accessories",
+   "filename": "clothing-accessories.jpg"
  },
  {
-   "name":"Tools & Equipment"
+   "name":"Tools & Equipment",
+   "filename": "tools.jpg"
  }
 ];
 

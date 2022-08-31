@@ -5,7 +5,7 @@ const categorydata = [
     "name": "Home & Bath"
  },
  {
-    "name": "Eletronics"
+    "name": "Electronics"
  },
  {
     "name": "Art & Collectibles"

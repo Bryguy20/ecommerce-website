@@ -41,13 +41,14 @@ router.get('/category/:id', async (req, res) => {
               'id',
               'name',
               'description',
-              'price'
+              'price',
+              'category_id',
+              'filename'
             ],
           },
         ],
       });
       const category = dbCategoryData.get({ plain: true });
-      
       res.render('productList', { category, loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
