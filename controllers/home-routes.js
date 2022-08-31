@@ -27,11 +27,6 @@ router.get('/', async (req, res) => {
 
 // GET one category
 router.get('/category/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the gallery
     try {
       const dbCategoryData = await Category.findByPk(req.params.id, {
         include: [
@@ -54,16 +49,11 @@ router.get('/category/:id', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  }
 });
 
 
 router.get('/product/:id', async (req, res) => {
-  // If the user is not logged in, redirect the user to the login page
-  if (!req.session.loggedIn) {
-    res.redirect('/login');
-  } else {
-    // If the user is logged in, allow them to view the painting
+  
     try {
       const dbProductData = await Product.findByPk(req.params.id);
 
@@ -74,7 +64,6 @@ router.get('/product/:id', async (req, res) => {
       console.log(err);
       res.status(500).json(err);
     }
-  }
 });
 
 router.get('/login', (req, res) => {
@@ -100,6 +89,9 @@ router.get('/signup', (req, res) => {
 
 
 router.get('/cart', async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+} else {
   try {
     const dbCartData = await Cart.findOne({
       where: { user_id: req.session.userID },
@@ -128,6 +120,6 @@ router.get('/cart', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-
+}
 });
 module.exports = router;
