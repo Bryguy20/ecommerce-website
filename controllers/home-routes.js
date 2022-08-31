@@ -59,7 +59,7 @@ router.get('/product/:id', async (req, res) => {
 
       const product = dbProductData.get({ plain: true });
 
-      res.render('productView', { product });
+      res.render('productView', { product , loggedIn: req.session.loggedIn });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -94,26 +94,23 @@ router.get('/cart', async (req, res) => {
 } else {
   try {
     const dbCartData = await Cart.findOne({
-      where: { user_id: req.session.userID },
+      where: { id: req.session.userCart },
       include: [
         {
           model: Product, through: CartProduct,
           attributes: [
             'id',
             'name',
-            'Description',
+            'description',
             'price',
-            'image'
-          ],
-          group: 'id'
+            'filename'
+          ]
         },
       ],
     })
-
-    const cart = dbCartData.map((product) =>
-      product.get({ plain: true }));
-
-    var cartTotal = cart.reduce((product,acc) => acc + (product.qty * product.price),0)
+    var cartTotal
+      const cart = dbCartData.get({ plain: true });
+      var cartTotal = cart.products.reduce((product,acc) => acc + (product.qty * product.price),0);
 
     res.render('cart', { cart,cartTotal: cartTotal, loggedIn: req.session.loggedIn });
   } catch (err) {

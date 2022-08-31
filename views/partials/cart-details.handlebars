@@ -1,19 +1,19 @@
 <div class="container">
   <div class="notification is-primary">
-    {{#if cartItems}}
+    {{#if product}}
 
-    {{#grouped_each 4 cartItems}}
+    {{#grouped_each 4 product}}
     <div class="row cart-row">
       {{#each this}}
       <div class="col-md-3 col-sm-6 product">
         <div class="thumbnail">
-          <img src="{{Product.img}}" alt="{{Product.name}}">
+          <img src="{{img}}" alt="{{name}}">
           </a>
           <div class="caption">
-            <h3>{{Product.name}}</h3>
-            <p class="price">${{Product.price}}</p>
+            <h3>{{name}}</h3>
+            <p class="price">${{price}}</p>
             <button id="minus-button">-</button>
-         <span>{{cart.count}} </span>
+         <span>{{qty}} </span>
           <button id="plus-button">+</button>
           </div>
         </div>
