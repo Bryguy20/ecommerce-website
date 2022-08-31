@@ -1,0 +1,8 @@
+<div>
+    <h2>{{category.name}}</h2>
+    <div class="item-cards-container">
+    {{#each category.products as |product|}}
+    {{>product-card}}
+    {{/each}}
+    </div>
+</div>

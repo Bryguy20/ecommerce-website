@@ -18,7 +18,7 @@ Cart.init(
         allowNUll:false,
     },
     total: {
-        
+        type : DataTypes.INTEGER
     },
     product_id: {
         type: DataTypes.INTEGER,

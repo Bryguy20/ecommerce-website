@@ -2,160 +2,186 @@ const { Product } = require('../models');
 
 const productdata = [
   {
-    "item": "Awesome Generic Coffee Pods",
+    "name": "Awesome Generic Coffee Pods",
     "description": "Ten count of medium roast amazing arabica coffee pods.",
-    "price": 10,
-    "filename":"coffeePod.png"
+    "price": 10.00,
+    "filename":"coffeePod.png",
+    "category_id": 1
   },
   {
-    "item": "Sun Glasses",
+    "name": "Sun Glasses",
     "description": "Desinger style fashionable polarized Glasses.",
-    "price": 50,
-    "filename":"sunglasses.png"
+    "price": 50.00,
+    "filename":"sunglasses.png",
+    "category_id": 5
   },
   {
-    "item": "Phone mount",
+    "name": "Phone mount",
     "description": "Easy to use phone mount for your car that fits into any cup holder",
-    "price": 20,
-    "filename":"PhoneMount"
+    "price": 20.00,
+    "filename":"PhoneMount.png",
+    "category_id": 2
   },
   {
-    "item": "Mouse pad",
+    "name": "Mouse pad",
     "description": "Dark mouse pad with foam rubber backing to prevent slipping.",
     "price": 5,
-    "filename":"MousePad.png"
+    "filename":"MousePad.png",
+    "category_id": 2
   },
   {
-    "item": "Small Mirror",
+    "name": "Small Mirror",
     "description": "small mirror that is easily adjustable",
     "price": 10,
-    "filename":"SmallMirror.png"
+    "filename":"SmallMirror.png",
+    "category_id": 1
   },
   {
-    "item": "Fuzzy Bathroom Rug",
+    "name": "Fuzzy Bathroom Rug",
     "description": "Ultra Plush comfortable bathroom mat ",
     "price": 25,
-    "filename":"Rug.png"
+    "filename":"Rug.png",
+    "category_id": 1
   },
   {
-    "item": "organization tray",
+    "name": "organization tray",
     "description": "This stylish drawer is a space-saving design that requires no tools and includes nine customizable compartments.",
     "price": 10,
-    "filename":"OrganizationTrar.png"
+    "filename":"OrganizationTrar.png",
+    "category_id": 1
   },
   {
-    "item": "All purpose cleaner",
+    "name": "All purpose cleaner",
     "description": "This all in one cleaner can clean anything in just one spray",
     "price": 10,
-    "filename":"Cleaner.png"
+    "filename":"Cleaner.png",
+    "category_id": 1
   },
   {
-    "item": "RGB gaming mousse",
+    "name": "RGB gaming mousse",
     "description": "the lights will improve your gameplay",
     "price": 30,
-    "filename":"mouse.png"
+    "filename":"mouse.png",
+    "category_id": 2
   },
   {
-    "item": "usb type c charger",
+    "name": "usb type c charger",
     "description": "three foot charging cable and brick",
     "price": 10,
-    "filename":"usb.png"
+    "filename":"usb.png",
+    "category_id": 2
   },
   {
-    "item": "mechanical keyboard",
+    "name": "mechanical keyboard",
     "description": "distinctive and fun clicky sounds with each keystroke",
     "price": 40,
-    "filename":"Keyboard.png"
+    "filename":"Keyboard.png",
+    "category_id": 2
   },
   {
-    "item": "Hour glass",
+    "name": "Hour glass",
     "description": "Time flys by while having fun! wach these grains of sand fall with style",
     "price": 10,
-    "filename":"Hourglass.png"
+    "filename":"Hourglass.png",
+    "category_id": 1
   },
   {
-    "item": "Classic art Painting",
+    "name": "Classic art Painting",
     "description": "the classic great wave painting",
     "price": 40,
-    "filename":"GreatWave.png"
+    "filename":"GreatWave.png",
+    "category_id": 3
   },
   {
-    "item": "small sculpture",
+    "name": "small sculpture",
     "description": "this decorative little statue will impress and add culture to your living space",
     "price": 40,
-    "filename":"Sculpture.png"
+    "filename":"Sculpture.png",
+    "category_id": 3
   },
   {
-    "item": "Pokemon card set",
+    "name": "Pokemon card set",
     "description": "These things are still collectables rite? who know you might just get that holographic charizard card",
     "price": 10,
-    "filename":"Pokemon.png"
+    "filename":"Pokemon.png",
+    "category_id": 3
   },
   {
-    "item": "smart TV",
+    "name": "smart TV",
     "description": "42 inch 4k TV built in wifi support for all the streaming services",
     "price": 200,
-    "filename":"SmartTv.png"
+    "filename":"SmartTv.png",
+    "category_id": 1
   },
   {
-    "item": "PS5",
+    "name": "PS5",
     "description": "the scalpers are no longer hoarding all the gaming consoles get yours now!",
     "price": 499,
-    "filename":"ps5.png"
+    "filename":"ps5.png",
+    "category_id": 4
   },
   {
-    "item": "monopoly",
+    "name": "monopoly",
     "description": "this classic board game is fun for the whole family",
     "price": 10,
-    "filename":"monopoly.png"
+    "filename":"monopoly.png",
+    "category_id": 4
   },
   {
-    "item": "Green Polo shirt",
+    "name": "Green Polo shirt",
     "description": "classic style to match your amazing look",
     "price": 40,
-    "filename":"polo.png"
+    "filename":"polo.png",
+    "category_id": 5
   },
   {
-    "item": "Blue jeans",
+    "name": "Blue jeans",
     "description": "every closet needs a pair of classic blue jeans",
     "price": 40,
-    "filename":"jeans.png"
+    "filename":"jeans.png",
+    "category_id": 5
   },
   {
-    "item": "running shoes",
+    "name": "running shoes",
     "description": "these shoes will make your weekly jog much more comforatable",
     "price": 50,
-    "filename":"shoes.png"
+    "filename":"shoes.png",
+    "category_id": 5
   },
   {
-    "item": "cute black dress",
+    "name": "cute black dress",
     "description": "the perfect dress for any occasion",
     "price": 40,
-    "filename":"BlackDress.png"
+    "filename":"BlackDress.png",
+    "category_id": 5
   },
   {
-    "item": "power drill",
+    "name": "power drill",
     "description": "this power drill will have you completing all those DIY projects in no time",
     "price": 40,
-    "filename":"Drill.png"
+    "filename":"Drill.png",
+    "category_id": 6
   },
   {
-    "item": "adjustable wrench",
+    "name": "adjustable wrench",
     "description": "a wrench similar to an open end wrench but having one fixed jaw and one adjustable jaw.",
     "price": 10,
-    "filename":"Wrench.png"
+    "filename":"Wrench.png",
+    "category_id": 6
   },
   {
-    "item": "Hammer",
+    "name": "Hammer",
     "description": "now everything looks like a nail",
     "price": 10,
-    "filename":"Hammer.png"
+    "filename":"Hammer.png",
+    "category_id": 6
   },
   {
-    "item": "screw driver",
+    "name": "screw driver",
     "description": "a tool that is used for turning screws",
     "price": 10,
-    "filename":"ScrewDriver.png"
+    "filename":"ScrewDriver.png",
+    "category_id": 6
   }
 ]
 

@@ -137,6 +137,14 @@ nav{
     justify-content: center;
     align-items: center;
 }
+.item-card > img{
+    width: 200px;
+    height:200px;
+}
+.product-img >img{
+    width: 250px;
+    height:250px;
+}
 .add-to-cart{
     display:flex;
     justify-content: center;
@@ -145,4 +153,9 @@ nav{
 .comment-container{
     text-align: center;
 
+}
+
+.category-name{
+    color:#283845;
+    text-decoration: none;
 }

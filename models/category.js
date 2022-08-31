@@ -15,7 +15,11 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: true,
   },
+},
   {
     sequelize,
     freezeTableName: true,

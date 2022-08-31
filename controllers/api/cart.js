@@ -1,4 +1,4 @@
-const router = require('express').Router();
+/*const router = require('express').Router();
 const { request, response } = require('express');
 const {Category, Product } = require('../../models');
 const Cart = require('../../models/cart');
@@ -31,7 +31,7 @@ router.get('/cart', async (req, res) => {
 });
 
 // add new item to cart 
-router.post('/cart/:id', loggedIn, (req, res) => {
+router.post('/cart/:id', loggedIn: req.session.loggedIn, (req, res) => {
     try{
 
      dbCartData.create({
@@ -68,3 +68,4 @@ router.delete('/cart/:id', loggedIn,function(req,res) {
 
 module.exports = router; 
 
+*/
