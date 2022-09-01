@@ -2,20 +2,18 @@
         <h2>{{product.name}}</h2>
         <div class="product-img">
             <img src="/images/{{product.filename}}" alt="{{product.description}}">
-            <div>
+            <div class="product-description">
+                <h3>Product Description</h3>
+                <br>
                 {{product.description}}
             </div>
         </div>
-
-            <button class="custom-button plus-button" data-productID="{{product.id}}"><i>+</i></button>
-
-            <span><p> {{product.price}}</p></span>
-            <button id="custom-button"><i>Add to Cart</i></button>
-            </article>
-        <div class="control">
-  <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea"></textarea>
-  <button class="custom-button">Submit</button>
-</div>
+        <div class="cart-options">
+            <button class="custom-button minus-button" id="minus"><i>-</i></button>
+            <span>1</span>
+            <button class="custom-button plus-button" id="plus"><i>+</i></button>
+            <span><p> ${{product.price}}</p></span>
+            <button class="custom-button" id="add-to-cart"><i>Add to Cart</i></button>
         </div>
 
 
@@ -26,8 +24,32 @@
             </textarea>
             
         </form>
-        </div> --}}
-        
+        </div> 
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="/js/cartManagement.js"></script>
+    <script> 
+
+let addTo = document.querySelector("#add-to-cart")
+let subtractFrom = document.querySelector('#minus')
+let quantity = document.querySelector("#cart-quantity")
+var x = 0
+
+addTo.addEventListener("click", async(e) =>{
+ if (localStorage.qtycount){
+    localStorage.qtycount = Number(localStorage.qtycount)+1;
+ }else{
+    localStorage.qtycount=0
+ }
+    var text = quantity.textContent = localStorage.qtycount;
+})
+
+subtractFrom.addEventListener("click", async(e) =>{
+ if (localStorage.qtycount){
+    localStorage.qtycount = Number(localStorage.qtycount)-1;
+ }else{
+    localStorage.qtycount=0
+ }
+    var text = quantity.textContent = localStorage.qtycount;
+})
+
+
+    </script>
