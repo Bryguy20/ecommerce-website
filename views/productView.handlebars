@@ -6,11 +6,18 @@
                 {{product.description}}
             </div>
         </div>
+<<<<<<< HEAD
         <div class="box has-background-danger-light">
             <article class="media">
             <button id="minus-button"><i>-</i></button>
             <p>1</p>
             <button id="plus-button"><i>+</i></button>
+=======
+        <div class="add-to-cart">
+            <button id="minus-button" data-productID="{{product.id}}" class="custom-button"><i>-</i></button>
+            <span>1</span>
+            <button id="plus-button" class="custom-button" data-productID="{{product.id}}"><i>+</i></button>
+>>>>>>> d6d65513a322db53ccb4e09d1989b0748e4a86b6
             <span><p> {{product.price}}</p></span>
             <button id="custom-button"><i>Add to Cart</i></button>
             </article>
@@ -31,3 +38,5 @@
         </div> --}}
         
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/cartManagement.js"></script>
