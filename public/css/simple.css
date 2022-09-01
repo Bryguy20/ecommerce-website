@@ -27,7 +27,7 @@ header{
     border-radius: 5px;
     width:70%;
     padding: 12px 20px;
-    /* border:1px solid white; */
+    border:1px solid white;
     margin-left:20px
 }
 
@@ -45,7 +45,7 @@ header{
     background-color: #FE654F ;
     /* display: flex; */
     /* flex-wrap:inline-flex; */
-    border: 1px;
+    border: 1px solid #FE654F;
     padding: 12px;
     border-radius: 5px;
 }
