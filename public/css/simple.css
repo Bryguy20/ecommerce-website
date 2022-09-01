@@ -28,7 +28,7 @@ header{
     border-radius: 5px;
     width:70%;
     padding: 12px 20px;
-    border:1px solid white;
+    /* border:1px solid white; */
     margin-left:20px
 }
 
@@ -50,26 +50,26 @@ header{
     border: 1px solid#803327
 }
 
-#signin a{
+/* #signin a{
     margin:6px 6px 6px 50px;
     text-decoration: none;
     color:black;
-}
+} */
 
 #signin a:hover{
     color:#FE654F
 }
 
-#Cart a{
+/* #Cart a{
     margin:6px;
     text-decoration: none;
     color:black;
-}
+} */
 
 nav{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    /* justify-content: space-around; */
+    /* align-items: center; */
     flex-direction: row;
     height: 35px;
     width: 100vw;
@@ -113,7 +113,7 @@ nav{
 }
 
 .carousel{
-    background-color: white;
+    /* background-color: white; */
     width: 100vw;
     height: 50vh;
 }
@@ -127,8 +127,10 @@ nav{
     justify-content: space-around;
 }
 .item-card{
-    width: 200px;
-    height:200px;
+    width: auto;
+    height:auto;
+    max-width: 100%;
+    max-height: 100%;
     background-color: white;
     border-radius: 5px;
 }
@@ -157,5 +159,6 @@ nav{
 
 .category-name{
     color:#283845;
+    text-size-adjust: large;
     text-decoration: none;
 }

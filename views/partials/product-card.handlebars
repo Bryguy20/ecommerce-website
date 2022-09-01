@@ -1,7 +1,12 @@
 
   <a href="/product/{{id}}">
-    <div class="item-card">
-        <img src="/images/{{filename}}" alt="{{description}}">
+    <div class="box">
+      <article class="media">
+        <div class="media-left">
+      <figure class="image is-256x256">
+        <img  class="is-rounded" src="/images/{{filename}}" alt="{{description}}">
+        </figure>
+        
     </div>
     <div class= "product-info" >
         <span>{{name}}</span>
@@ -13,3 +18,5 @@
      <span>{{qty.count}}</span>
      <button class="custom-button"><i>+</i></button>
   </div>
+  </div>
+  </article>
