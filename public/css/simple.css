@@ -10,6 +10,7 @@
 hr {
     width:90%;
     margin:0 auto;
+    background-color: black;
 }
 body{
     margin:0px;
@@ -27,8 +28,9 @@ header{
     border-radius: 5px;
     width:70%;
     padding: 12px 20px;
-    /* border:1px solid white; */
-    margin-left:20px
+    border:1px solid white;
+    margin-left:20px;
+    background-color: white;
 }
 
 .search-bar:focus,
@@ -45,7 +47,7 @@ header{
     background-color: #FE654F ;
     /* display: flex; */
     /* flex-wrap:inline-flex; */
-    border: 1px;
+    border: 1px solid #FE654F;
     padding: 12px;
     border-radius: 5px;
 }
@@ -73,7 +75,7 @@ header{
     margin:6px 6px 6px 50px;
     text-decoration: none;
     color:black;
-} */
+} 
 
 #signin a:hover{
     color:#FE654F
@@ -99,7 +101,7 @@ nav{
     font-size: 40px;
     font-style: italic;
     padding: 10px;
-    width:175px;
+    width:250px;
    
     
 
@@ -156,8 +158,8 @@ nav{
     justify-content: space-around;
 }
 .item-card{
-    width: auto;
-    height:auto;
+    width: 200px;
+    height:200px;
     max-width: 100%;
     max-height: 100%;
     background-color: whitesmoke;
@@ -238,4 +240,12 @@ nav{
 .product-list > h2 {
    margin:10px;
    font-size: 32px;
+}
+textarea{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+footer{
+    margin-top:50vh;
 }
