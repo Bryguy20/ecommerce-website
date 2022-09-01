@@ -70,8 +70,8 @@ header{
 
 nav{
     display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
+    justify-content: space-around; 
+     align-items: center;
     flex-direction: row;
     height: 35px;
     width: 100vw;
@@ -115,7 +115,7 @@ nav{
 }
 
 .carousel{
-    /* background-color: white; */
+    background-color: white;
     width: 100vw;
     height: 50vh;
 }
@@ -123,7 +123,7 @@ nav{
 .item-cards-container{
     margin:10px;
     display: flex;
-    /* flex-direction: row; */
+    flex-direction: row;
     flex-wrap: wrap;
     /* align-items: center; */
     justify-content: space-around;
@@ -141,14 +141,14 @@ nav{
     justify-content: center;
     align-items: center;
 }
-/* .item-card > img{
+.item-card > img{
     width: 200px;
     height:200px;
 }
 .product-img >img{
     width: 250px;
     height:250px;
-} */
+}
 .add-to-cart{
     display:flex;
     justify-content: center;

@@ -6,7 +6,7 @@
                 {{product.description}}
             </div>
         </div>
-        <div class="box">
+        <div class="box has-background-danger-light">
             <article class="media">
             <button id="minus-button"><i>-</i></button>
             <p>1</p>
@@ -14,14 +14,20 @@
             <span><p> {{product.price}}</p></span>
             <button id="custom-button"><i>Add to Cart</i></button>
             </article>
+        <div class="control">
+  <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea"></textarea>
+  <button class="custom-button">Submit</button>
+</div>
         </div>
-        <div class="comment-container">
+
+
+        {{!-- <div class="comment-container">
         <form action=""></form>
             <label for="review"></label>
             <textarea name="review" placeholder="Write a Customer Review" rows="10" cols="100">
             </textarea>
-            <button class="custom-button">Submit</button>
+            
         </form>
-        </div>
+        </div> --}}
         
     </div>
