@@ -40,7 +40,9 @@ header{
 
 .custom-button{
     background-color: #FE654F ;
-    border: 1px solid#FE654F;
+    /* display: flex; */
+    /* flex-wrap:inline-flex; */
+    border: 1px;
     padding: 12px;
     border-radius: 5px;
 }
@@ -68,8 +70,8 @@ header{
 
 nav{
     display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
+    justify-content: space-around; 
+     align-items: center;
     flex-direction: row;
     height: 35px;
     width: 100vw;
@@ -113,7 +115,7 @@ nav{
 }
 
 .carousel{
-    /* background-color: white; */
+    background-color: white;
     width: 100vw;
     height: 50vh;
 }
@@ -123,7 +125,7 @@ nav{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-around;
 }
 .item-card{
@@ -131,7 +133,7 @@ nav{
     height:auto;
     max-width: 100%;
     max-height: 100%;
-    background-color: white;
+    background-color: whitesmoke;
     border-radius: 5px;
 }
 .product-img{

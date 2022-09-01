@@ -6,21 +6,27 @@
                 {{product.description}}
             </div>
         </div>
-        <div class="add-to-cart">
-            <button data-productID="{{product.id}}" class="custom-button minus-button"><i>-</i></button>
-            <span>1</span>
+
             <button class="custom-button plus-button" data-productID="{{product.id}}"><i>+</i></button>
+
             <span><p> {{product.price}}</p></span>
-            <button class="custom-button"><i>Add to Cart</i></button>
+            <button id="custom-button"><i>Add to Cart</i></button>
+            </article>
+        <div class="control">
+  <textarea class="textarea has-fixed-size" placeholder="Fixed size textarea"></textarea>
+  <button class="custom-button">Submit</button>
+</div>
         </div>
-        <div class="comment-container">
+
+
+        {{!-- <div class="comment-container">
         <form action=""></form>
             <label for="review"></label>
             <textarea name="review" placeholder="Write a Customer Review" rows="10" cols="100">
             </textarea>
-            <button class="custom-button">Submit</button>
+            
         </form>
-        </div>
+        </div> --}}
         
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
