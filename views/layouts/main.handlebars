@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nik Nak Ecommerce Store</title>
-    {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> --}}
+     <link rel="stylesheet" href="/css/resetstylesheet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/css/simple.css">
 </head>
 
@@ -14,13 +15,18 @@
     <header>
 
         <h1 id="logo"><a href="/">Nik Nak</a></h1>
-        <img id="logo-image" src="/images/NIkNak_Logo.png" alt="Shopping bag logo">
-
+        <img class="is-rounded" src="/images/NIkNak_Logo.png" alt="Shopping bag logo">
         <div>
             <input class="search-bar" type="text" placeholder="Search for Anything " size="200" height="50">
-            <button id="search-button" type="button">Search</button>
-            <span id="signin"><a href="/login">Sign-in </a></span>
-            <span id="Cart"><a href="/cart">Cart </a></span>
+            <button class="button is-info is-light">Search</button>
+            <div class="buttons">
+            <span class="button is-primary"  id="signin"><a href="/login">Sign-in </a></span>
+            <div class="control">
+                   <div class="control">
+             
+             <input class="input" type="text"  placeholder="Disabled at the moment" disabled href="/cart"> </span>
+         </div>  
+          </div>
         </div>
 
     </header>
@@ -28,7 +34,8 @@
         <hr class="divide">
     </div>
     <nav>
-        <div class="Nav-links-Container">
+        <div class="container">
+             <div class="notification is-primary">
             <ul>
                 <li class="Nav-Link"><a href="#">Home & Bath</a></li>
                 <li class="Nav-Link"><a href="#">Electronics</a></li>
@@ -37,6 +44,7 @@
                 <li class="Nav-Link"><a href="#">Clothing & Accessories</a></li>
                 <li class="Nav-Link"><a href="#">Tools & Equipment</a></li>
             </ul>
+             </div>
         </div>
     </nav>
         {{{body}}}
