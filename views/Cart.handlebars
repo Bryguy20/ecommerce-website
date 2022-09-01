@@ -1,5 +1,7 @@
-<script src="/js/cart-details.js"></script>
-{{#if cart}}
+
+
+{{cart.id}}
+{{#if cart.products}}
 {{#each cart.products as |product|}}
 {{> cart-details}}
 {{/each}}
