@@ -2,16 +2,18 @@
         <h2>{{product.name}}</h2>
         <div class="product-img">
             <img src="/images/{{product.filename}}" alt="{{product.description}}">
-            <div>
+            <div class="product-description">
+                <h3>Product Description</h3>
+                <br>
                 {{product.description}}
             </div>
         </div>
-        <div class="add-to-cart">
-            <button class="custom-button"><i>-</i></button>
+        <div class="cart-options">
+            <button class="custom-button" id="minus"><i>-</i></button>
             <span>1</span>
-            <button class="custom-button"><i>+</i></button>
-            <span><p> {{product.price}}</p></span>
-            <button class="custom-button"><i>Add to Cart</i></button>
+            <button class="custom-button" id="plus"><i>+</i></button>
+            <span><p> ${{product.price}}</p></span>
+            <button class="custom-button" id="add-to-cart"><i>Add to Cart</i></button>
         </div>
         <div class="comment-container">
         <form action=""></form>
@@ -20,6 +22,20 @@
             </textarea>
             <button class="custom-button">Submit</button>
         </form>
-        </div>
-        
+        </div> 
     </div>
+    <script> 
+
+let addTo = document.querySelector("#add-to-cart")
+let quantity = document.querySelector("#cart-quantity")
+var x = 0
+addTo.addEventListener("click", async(e) =>{
+  
+ if (localStorage.qtycount){
+    localStorage.qtycount = Number(localStorage.qtycount)+1;
+ }else{
+    localStorage.qtycount=0
+ }
+    var text = quantity.textContent = localStorage.qtycount;
+})
+    </script>

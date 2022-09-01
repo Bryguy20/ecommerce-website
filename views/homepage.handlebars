@@ -1,11 +1,12 @@
 
 <div class="item-cards-container">
   {{#each categories as |category|}}
-  <a href="/category/{{category.id}}">
+  <a class="category-name" href="/category/{{category.id}}">
   <div class="item-card">
+      <div class="overlay"></div>
     <img src="/images/{{category.filename}}" alt="{{category.name}}" style="width:100%">
     <div class="container">
-      <h4 class = "category-name"><b>{{category.name}}</b></h4>
+      <h4 class ="category-name"><b>{{category.name}}</b></h4>
     </div>
   </div>
   </a>

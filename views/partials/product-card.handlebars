@@ -1,15 +1,17 @@
-
-  <a href="/product/{{id}}">
+<div class="product-container">
+  <a class="product" href="/product/{{id}}">
     <div class="item-card">
+      <div class="overlay"></div>
         <img src="/images/{{filename}}" alt="{{description}}">
     </div>
     <div class= "product-info" >
-        <span>{{name}}</span>
-        <span>{{price}}</span>
+        <span class= "product-name">{{name}}</span>
+        <div>${{price}}</div>
     </div>
   </a>
-  <div>
-     <button class="custom-button"><i>-</i></button>
+  <div class="cart-options">
+     <button class="custom-button" id="minus"><i>-</i></button>
      <span>{{qty.count}}</span>
-     <button class="custom-button"><i>+</i></button>
+     <button class="custom-button" id="plus"><i>+</i></button>
   </div>
+</div>
