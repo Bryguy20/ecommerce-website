@@ -9,15 +9,15 @@
             </div>
         </div>
         <div class="cart-options">
-            <button class="custom-button minus-button" id="minus"><i>-</i></button>
+            <button class="custom-button minus-button" id="minus" data-productID="{{product.id}}"><i>-</i></button>
             <span>1</span>
-            <button class="custom-button plus-button" id="plus"><i>+</i></button>
+            <button class="custom-button plus-button" id="plus" data-productID="{{product.id}}"><i>+</i></button>
             <span><p> ${{product.price}}</p></span>
             <button class="custom-button" id="add-to-cart"><i>Add to Cart</i></button>
         </div>
 
 
-        {{!-- <div class="comment-container">
+        <div class="comment-container">
         <form action=""></form>
             <label for="review"></label>
             <textarea name="review" placeholder="Write a Customer Review" rows="10" cols="100">
@@ -26,30 +26,3 @@
         </form>
         </div> 
     </div>
-    <script> 
-
-let addTo = document.querySelector("#add-to-cart")
-let subtractFrom = document.querySelector('#minus')
-let quantity = document.querySelector("#cart-quantity")
-var x = 0
-
-addTo.addEventListener("click", async(e) =>{
- if (localStorage.qtycount){
-    localStorage.qtycount = Number(localStorage.qtycount)+1;
- }else{
-    localStorage.qtycount=0
- }
-    var text = quantity.textContent = localStorage.qtycount;
-})
-
-subtractFrom.addEventListener("click", async(e) =>{
- if (localStorage.qtycount){
-    localStorage.qtycount = Number(localStorage.qtycount)-1;
- }else{
-    localStorage.qtycount=0
- }
-    var text = quantity.textContent = localStorage.qtycount;
-})
-
-
-    </script>
