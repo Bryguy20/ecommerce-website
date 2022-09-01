@@ -13,9 +13,9 @@
 
 <body>
     <header>
-
+          
         <h1 id="logo"><a href="/">Nik Nak</a></h1>
-        <img class="is-rounded" src="/images/NIkNak_Logo.png" alt="Shopping bag logo">
+        <img id="logo-image" src="/images/NIkNak_Logo.png" alt="Shopping bag logo">
         <div>
             <input class="search-bar" type="text" placeholder="Search for Anything " size="200" height="50">
             <button class="button is-info is-light">Search</button>
@@ -34,8 +34,8 @@
         <hr class="divide">
     </div>
     <nav>
-        <div class="container">
-             <div class="notification is-primary">
+        {{!-- <div class="container"> --}}
+             <div class="text is-capitalized is-underlined has-text-centered">
             <ul>
                 <li class="Nav-Link"><a href="#">Home & Bath</a></li>
                 <li class="Nav-Link"><a href="#">Electronics</a></li>
@@ -45,10 +45,18 @@
                 <li class="Nav-Link"><a href="#">Tools & Equipment</a></li>
             </ul>
              </div>
-        </div>
+        {{!-- </div> --}}
     </nav>
         {{{body}}}
-    <footer></footer>
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
 </body>
 
 </html>
