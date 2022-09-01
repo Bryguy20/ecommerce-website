@@ -27,10 +27,11 @@
     <script> 
 
 let addTo = document.querySelector("#add-to-cart")
+let subtractFrom = document.querySelector('#minus')
 let quantity = document.querySelector("#cart-quantity")
 var x = 0
+
 addTo.addEventListener("click", async(e) =>{
-  
  if (localStorage.qtycount){
     localStorage.qtycount = Number(localStorage.qtycount)+1;
  }else{
@@ -38,4 +39,15 @@ addTo.addEventListener("click", async(e) =>{
  }
     var text = quantity.textContent = localStorage.qtycount;
 })
+
+subtractFrom.addEventListener("click", async(e) =>{
+ if (localStorage.qtycount){
+    localStorage.qtycount = Number(localStorage.qtycount)-1;
+ }else{
+    localStorage.qtycount=0
+ }
+    var text = quantity.textContent = localStorage.qtycount;
+})
+
+
     </script>
