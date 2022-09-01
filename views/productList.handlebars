@@ -1,5 +1,6 @@
-<div>
-    <h2 class="text is-capitalized is-underlined is-size-1 has-text-centered">{{category.name}}</h2>
+
+<div class="product-list">
+    <h2>{{category.name}}</h2>
     <div class="item-cards-container">
     {{#each category.products as |product|}}
     {{>product-card}}

@@ -1,15 +1,13 @@
 
 <div class="item-cards-container">
   {{#each categories as |category|}}
-  <a href="/category/{{category.id}}">
-
+  <a class="category-name" href="/category/{{category.id}}">
   <div class="item-card">
-    <figure class="is-flex is-align-items-center is-justify-content-center image is-256x256">
-    <img  src="/images/{{category.filename}}" alt="{{category.name}}" style="width:100%">
-    </figure>
-    {{!-- <div class="container"> --}}
-      <h4 class = "category-name"><b>{{category.name}}</b></h4>
-    {{!-- </div> --}}
+      <div class="overlay"></div>
+    <img src="/images/{{category.filename}}" alt="{{category.name}}" style="width:100%">
+    <div class="container">
+      <h4 class ="category-name"><b>{{category.name}}</b></h4>
+    </div>
   </div>
   </a>
   {{/each}}
